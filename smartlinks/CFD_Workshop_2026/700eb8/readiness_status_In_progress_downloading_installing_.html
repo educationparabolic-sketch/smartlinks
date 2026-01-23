@@ -1,0 +1,26 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+(function(){
+  const p = new URLSearchParams(location.search);
+  const email = p.get('email');
+  if (!email) {
+    alert("Invalid access. Please use the email link.");
+    return;
+  }
+  if (!confirm("Click OK to submit your response.")) return;
+
+  location.href =
+    "https://script.google.com/macros/s/AKfycbx9t-o2jclRfh6CH9KOkzLRPkwHmALGHUR8k-pMcCEusQ_r0llPDcD-A8-RgN92Cob28Q/exec" +
+    "?campaign=CFD_Workshop_2026" +
+    "&email=" + encodeURIComponent(email) +
+    "&question=readiness_status" +
+    "&answer=In%20progress%20(downloading%2Finstalling)";
+})();
+</script>
+</head>
+<body>Submitting…</body>
+</html>
