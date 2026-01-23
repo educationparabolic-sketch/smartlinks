@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Confirm Response</title>
+</head>
+<body style="font-family:Segoe UI,Arial;text-align:center;padding:40px">
+  <h3>Confirm your response</h3>
+  <p>Please click OK in the dialog to submit your response.</p>
+
+  <script>
+    (function () {
+      const ok = confirm("Click OK to submit your response.");
+      if (!ok) {
+        document.body.innerHTML += "<p>Submission cancelled.</p>";
+        return;
+      }
+
+      location.href =
+        "https://script.google.com/macros/s/AKfycbyYm2pHn9I2WqidEn6lOVSy03z35VCmFP1NCxSS1Se0i4bMCkdlb73C65Mhy0eqJK81/exec" +
+        "?campaign=Meal_Info_2026" +
+        "&email={{Email}}" +
+        "&question=service_tier" +
+        "&answer=Premium";
+    })();
+  </script>
+</body>
+</html>
