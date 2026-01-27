@@ -1,0 +1,26 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+(function(){
+  const p = new URLSearchParams(location.search);
+  const email = p.get('email');
+  if (!email) {
+    alert("Invalid access. Please use the email link.");
+    return;
+  }
+  if (!confirm("Click OK to submit your response.")) return;
+
+  location.href =
+    "https://script.google.com/macros/s/AKfycbwiffX821RaGvDTAlZdFDWSWdn9NsohvmD9hs1saIkcEvfnNSzDehCtOfp5WGU06x2e/exec" +
+    "?campaign=Meal_Info_2026" +
+    "&email=" + encodeURIComponent(email) +
+    "&question=Rating" +
+    "&answer=4";
+})();
+</script>
+</head>
+<body>Submitting…</body>
+</html>
