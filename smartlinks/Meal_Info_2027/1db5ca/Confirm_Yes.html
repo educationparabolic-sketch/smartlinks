@@ -1,0 +1,26 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+(function(){
+  const p = new URLSearchParams(location.search);
+  const email = p.get('email');
+  if (!email) {
+    alert("Invalid access. Please use the email link.");
+    return;
+  }
+  if (!confirm("Click OK to submit your response.")) return;
+
+  location.href =
+    "https://script.google.com/macros/s/AKfycbzcK2qCis9YtayiXG3dsPhP07yaos5za-fuedMwfQgN1dS_Za9f0O2NNTxfyc5G6RSi/exec" +
+    "?campaign=Meal_Info_2027" +
+    "&email=" + encodeURIComponent(email) +
+    "&question=Confirm" +
+    "&answer=Yes";
+})();
+</script>
+</head>
+<body>Submitting…</body>
+</html>
