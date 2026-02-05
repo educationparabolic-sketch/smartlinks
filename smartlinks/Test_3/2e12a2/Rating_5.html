@@ -1,0 +1,48 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body {
+    font-family: Segoe UI, Arial, sans-serif;
+    text-align: center;
+    padding: 40px;
+    color: #444;
+  }
+  .msg {
+    font-size: 15px;
+    margin-top: 10px;
+  }
+</style>
+<script>
+(function(){
+  const p = new URLSearchParams(location.search);
+  const email = p.get('email');
+  if (!email) {
+    alert("Invalid access. Please use the email link.");
+    return;
+  }
+
+  if (!confirm("Click OK to submit your response.")) return;
+
+  document.body.innerHTML =
+    "<h3>⏳ Logging your responses…</h3>" +
+    "<div class='msg'>Please do not close this window.</div>";
+
+  setTimeout(function () {
+    location.href =
+      "https://script.google.com/a/rgipt.ac.in/macros/s/AKfycbzpPKOgSdlbcMTclEohxo9QrDc0UGLodeC2JMw27BTy1X_t5o_5ny5fm5PMkeLhSycV/exec" +
+      "?campaign=Test_3" +
+      "&email=" + encodeURIComponent(email) +
+      "&question=Rating" +
+      "&answer=5";
+  }, 150);
+})();
+</script>
+
+</head>
+<body>
+<h3>Preparing submission…</h3>
+</body>
+</html>
