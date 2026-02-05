@@ -1,0 +1,26 @@
+
+ <!doctype html>
+ <html>
+ <head>
+ <meta charset="utf-8">
+<script>
+(function(){
+  const p = new URLSearchParams(location.search);
+  const email = p.get('email');
+  if (!email) {
+    alert("Invalid access. Please use the email link.");
+    return;
+  }
+  if (!confirm("Click OK to submit your response.")) return;
+
+  location.href =
+    "https://script.google.com/a/rgipt.ac.in/macros/s/AKfycbxZXQ91Pv8Hj7L8LcZfbulqyLxnJG015mGzNQ4JbnKCo0bOfensbOC4VsNhIKkwnWQD/exec" +
+    "?campaign=Test" +
+    "&email=" + encodeURIComponent(email) +
+    "&question=Meal" +
+    "&answer=Non-Veg";
+})();
+</script>
+</head>
+<body>Submitting…</body>
+</html>
