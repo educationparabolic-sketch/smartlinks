@@ -1,0 +1,26 @@
+
+ <!doctype html>
+ <html>
+ <head>
+ <meta charset="utf-8">
+<script>
+(function(){
+  const p = new URLSearchParams(location.search);
+  const email = p.get('email');
+  if (!email) {
+    alert("Invalid access. Please use the email link.");
+    return;
+  }
+  if (!confirm("Click OK to submit your response.")) return;
+
+  location.href =
+    "https://script.google.com/a/rgipt.ac.in/macros/s/AKfycbwODNcoW50sbGKLVUl-wS-6vK3Joc7qaQfx10UP6oQZWlagt66kBBKQZyq9fcsvexHoUA/exec" +
+    "?campaign=Aghna_Testing" +
+    "&email=" + encodeURIComponent(email) +
+    "&question=Confirm" +
+    "&answer=No";
+})();
+</script>
+</head>
+<body>Submitting…</body>
+</html>
